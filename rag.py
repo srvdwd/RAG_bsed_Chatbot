@@ -5,7 +5,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 genai.configure(
-    api_key="AIzaSyCB45Ne6cgD7_H_vmtPoDqZOqvb-4TZ_2o" 
+    api_key="YOUR_API_KEY" 
 )
 model = genai.GenerativeModel("gemini-2.5-flash")
 
