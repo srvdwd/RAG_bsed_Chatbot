@@ -2,11 +2,15 @@ import google.generativeai as genai
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 genai.configure(
-    api_key="YOUR_API_KEY" 
+    api_key=os.getenv("GEMINI_API_KEY")
 )
+
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 embeddings = HuggingFaceEmbeddings(model="sentence-transformers/all-MiniLM-L6-v2")
